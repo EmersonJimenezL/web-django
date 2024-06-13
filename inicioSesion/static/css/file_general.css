@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'fuenteparrafos';
+    src: url('../fonts/fuenteparrafos/Dosis-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fuentetitulos';
+    src: url('../fonts/fuentetitulos/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
 .generalbody {
     background-image: url(../images/fondo.jpg);
     background-size: cover;
@@ -52,6 +62,7 @@ div>ul>li>a:hover {
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #420204;
 }
+
 .card-body {
     background-color: #99979785;
 }
@@ -68,11 +79,13 @@ p{
 .estilos_card_p{
 color: black !important;
 }
+
 .contenedorCarucel{
     font-weight: bold;
     color: #ffffff ;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336),2px 2px 1px rgba(0, 0, 0, 0.774), -1px -1px 1px rgba(0, 0, 0, 0.774);
 }
+
 .adjuntar{
 margin: 0px auto !important;
 text-align: center !important;
@@ -82,9 +95,15 @@ padding: 1%;
 .bordes{
     border-bottom: 1px dashed white;
 }
+
 .ajustar_car_paquetes{
     text-align:start !important;
 }
+
 a{
+    font-family: 'fuenteparrafos' !important;
+}
+
+label{
     font-family: 'fuenteparrafos' !important;
 }
