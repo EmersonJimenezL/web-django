@@ -1,14 +1,5 @@
-@font-face {
-    font-family: 'fuentetitulos';
-    src: url('/proyecto-web-duoc-main/fonts/fuentetitulos/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'fuenteparrafos';
-    src: url('/proyecto-web-duoc-main/fonts/fuenteparrafos/Dosis-VariableFont_wght.ttf') format('truetype');
-  }
-  
-  .generalbody {
-    background-image: url(../images/379773.jpg);
+.generalbody {
+    background-image: url(../images/fondo.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center calc(50% - 20px);
