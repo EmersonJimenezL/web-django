@@ -1,3 +1,4 @@
+{%load static%}
 <!doctype html>
 <html lang="en">
 
@@ -7,12 +8,10 @@
   <meta name="description" content="Podras encontrar nuestros hoteles disponibles tanto en Santiago como en Valparaiso,
   con sus respectivos valores y disponibilidades de dorminotrios.">
   <title> Hoteles </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/file_general.css">
-  <link rel="icon" type="image/x-icon" href="images/V.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+  <link rel="stylesheet" href="{%static 'css/file_general.css'%}">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/V.png'%}" />
 </head>
 
 <body class="generalbody">
@@ -20,7 +19,7 @@
   <header>
     <nav class="nvr-box navbar bg-white navbar-expand-sm border-body" sdata-bs-theme="dark" style="padding: 0px;">
       <div class="container-fluid">
-        <a href="/"><img src="images/V.png" alt="V"
+        <a href="/"><img src="{% static 'images/V.png'%}" alt="V"
             style="width: 80px; margin-right:15px; filter: drop-shadow(2px 2px 8px black);"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +45,7 @@
   <div class="mt-1 p-2 container-fluid" style="background-color: rgba(0, 0, 0, 0.8); ">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
-        <img src="images/hotelsantiago.jpg" alt="..." style="width:85%; height: 25em; 
+        <img src="{%static 'images/htl-stgo.jpg'%}" alt="..." style="width:85%; height: 25em; 
         border-radius: 0px 50px; " class="responsive mt-1">
       </div>
 
@@ -72,7 +71,7 @@
         <!-- Habitacion 1 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio1.jpg" class="card-img-top" alt="Dormitorio Estándar">
+            <img src="{%static 'images/htl-dormitorio1-stgo.jpg'%}" class="card-img-top" alt="Dormitorio Estándar">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Dormitorio Estándar</h5>
               <p class="card-text estilos_card_p">
@@ -88,7 +87,7 @@
         <!-- Habitacion 2 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio2.jpg" class="card-img-top" alt="Dormitorio Deluxe">
+            <img src="{%static 'images/htl-dormitorio2-stgo.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Dormitorio Deluxe</h5>
               <p class="card-text estilos_card_p">
@@ -106,7 +105,7 @@
         <!-- Habitacion 3 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio_ejecutivo.avif" class="card-img-top" alt="Suite Ejecutiva">
+            <img src="{%static 'images/htl-dormitorio3-stgo.avif'%}" class="card-img-top" alt="Suite Ejecutiva">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Suite Ejecutiva</h5>
               <p class="card-text estilos_card_p">
@@ -130,7 +129,7 @@
     <div class="row">
 
       <div class="col-sm-12 col-md-12 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
-        <img src="images/hotelregion.jpeg" alt="Hotel Veranum Valparaíso" style="width:85%; height: 25em; 
+        <img src="{%static 'images/htl-region.jpeg'%}" alt="Hotel Veranum Valparaíso" style="width:85%; height: 25em; 
         border-radius: 0px 50px; " class="responsive mt-1">
       </div>
 
@@ -154,7 +153,7 @@
         <!-- Habitacion 1 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio1region.png" class="card-img-top" alt="Dormitorio con Vista al Mar">
+            <img src="{%static 'images/htl-dormitorio1-reg.png'%}" class="card-img-top" alt="Dormitorio con Vista al Mar">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Dormitorio con Vista al Mar</h5>
               <p class="card-text estilos_card_p">
@@ -171,7 +170,7 @@
         <!-- Habitacion 2 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio2region.jpg" class="card-img-top" alt="Dormitorio Deluxe">
+            <img src="{%static 'images/htl-dormitorio2-reg.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Dormitorio con Vista a los Cerros</h5>
               <p class="card-text estilos_card_p">
@@ -188,7 +187,7 @@
         <!-- Habitacion 3 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/dormitorio3region.jpg" class="card-img-top" alt="Suite Ejecutiva">
+            <img src="{%static 'images/htl-dormitorio3-reg.jpg'%}" class="card-img-top" alt="Suite Ejecutiva">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Suite Familiar</h5>
               <p class="card-text estilos_card_p">
@@ -213,7 +212,7 @@
         <!-- Habitacion 1 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/sala.jpg" class="card-img-top" alt="Dormitorio con Vista al Mar">
+            <img src="{%static 'images/htl-sala1.jpg'%}" class="card-img-top" alt="Dormitorio con Vista al Mar">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Bar rustico</h5>
               <p class="card-text estilos_card_p">
@@ -230,7 +229,7 @@
         <!-- Habitacion 2 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/sala2.jpg" class="card-img-top" alt="Dormitorio Deluxe">
+            <img src="{%static 'images/htl-sala2.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Bar clasico</h5>
               <p class="card-text estilos_card_p">
@@ -247,7 +246,7 @@
         <!-- Habitacion 3 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="images/piscina.jpg" class="card-img-top" alt="Suite Ejecutiva">
+            <img src="{%static 'images/htl-piscina.jpg'%}" class="card-img-top" alt="Suite Ejecutiva">
             <div class="card-body ajustar_car_paquetes">
               <h5 class="card-title estilos_card_p">Piscina</h5>
               <p class="card-text estilos_card_p">
@@ -265,95 +264,12 @@
     </div>
   </div>
 
-
-  <div class="mt-1 p-2 container-fluid" style="background-color: rgba(0, 0, 0, 0.8); ">
-    <div class="row">
-
-      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
-        <img src="images/hotelregion.jpeg" alt="Hotel Veranum Valparaíso" style="width:85%; height: 25em; 
-      border-radius: 0px 50px; " class="responsive mt-1">
-      </div>
-
-      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar">
-        <a href="#" class="text-decoration-none text-dark">
-          <h2 class="mt-3 titulo_global" style="font-size: 35px;">Hotel Veranum Valparaíso</h2>
-        </a>
-        <p class="mt-2 p_card_global" style="font-size: 23px; text-align: justify; padding: 20px;">
-          El hotel se encuentra ubicado en el pintoresco puerto de Valparaíso, Chile, conocido por sus coloridas casas
-          en las colinas y su vibrante escena cultural. Ofrece a sus huéspedes una experiencia única con vistas
-          espectaculares al océano Pacífico y a la encantadora arquitectura de la ciudad. Desde sus habitaciones con
-          vista al mar hasta sus acogedores espacios comunes, el hotel Veranum Valparaíso es un refugio de
-          tranquilidad y estilo.
-        </p>
-      </div>
-    </div>
-
-    <div class="container mt-0">
-      <h3 class="text-center text-white mt-2" style="border-top: 1px dashed white;">Habitaciones</h3>
-      <div class="row mt-3">
-        <!-- Habitacion 1 -->
-        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
-          <div class="card mb-4">
-            <img src="images/dormitorio1region.png" class="card-img-top" alt="Dormitorio con Vista al Mar">
-            <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Dormitorio con Vista al Mar</h5>
-              <p class="card-text estilos_card_p">
-                Disfruta de una hermosa vista al océano Pacífico en este acogedor dormitorio.
-                Equipado con una cama matrimonial, baño privado y todas las comodidades necesarias.
-              </p>
-              <p class="card-text estilos_card_p">Precio: Desde $60.000 CLP por noche.</p>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary btn-form">Añadir al carrito</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Habitacion 2 -->
-        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
-          <div class="card mb-4">
-            <img src="images/dormitorio2region.jpg" class="card-img-top" alt="Dormitorio Deluxe">
-            <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Dormitorio con Vista a los Cerros</h5>
-              <p class="card-text estilos_card_p">
-                Este encantador dormitorio ofrece vistas a las coloridas colinas de Valparaíso.
-                Cuenta con dos camas individuales, baño privado y un ambiente relajante para disfrutar de la ciudad.
-              </p>
-              <p class="card-text estilos_card_p">Precio: Desde $70.000 CLP por noche.</p>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary btn-form">Añadir al carrito</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Habitacion 3 -->
-        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
-          <div class="card mb-4">
-            <img src="images/dormitorio3region.jpg" class="card-img-top" alt="Suite Ejecutiva">
-            <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Suite Familiar</h5>
-              <p class="card-text estilos_card_p">
-                Ideal para familias, esta espaciosa suite ofrece vistas al mar y a los cerros.
-                Equipado con una cama king size y una cama individual, baño privado y todas las comodidades modernas.
-              </p>
-              <p class="card-text estilos_card_p">Precio: Desde $90.000 CLP por noche.</p>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary btn-form">Añadir al carrito</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
   <footer>
     <div class="container-fluid bg-white mt-1 p-2">
       <div class="row">
         <!--Aquí va el logo del hotel-->
         <div class="col-sm-6 col-md-4 col-lg-2">
-          <a href="#" class="text-decoration-none text-success"><img src="images/V.png" class="rounded-2"
+          <a href="#" class="text-decoration-none text-success"><img src="{% static 'images/V.png'%}" class="rounded-2"
               style="width: 75%; filter: drop-shadow(5px 5px 8px black);" id="logo"></a>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2">
