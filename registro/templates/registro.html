@@ -52,12 +52,16 @@
   <!--CONTENIDO-->
   <div class="container mb-5 mt-5">
     <div class="row">
-      <form class="form-box col-10 col-sm-10 col-md-9 col-lg-8 mx-auto border mb-5 mt-5 pt-5 pb-5 rounded-5">
+      <form 
+      action=""
+      method="post"
+      class="form-box col-10 col-sm-10 col-md-9 col-lg-8 mx-auto border mb-5 mt-5 pt-5 pb-5 rounded-5">
+      {% csrf_token %}
         <fieldset class="text-center text-white w-50 mx-auto">
           <h3 class="mb-5">Registro</h3>
           <div class="mb-3">
             <label class="form-label mb-4">Nombre</label>
-            <input type="tel" class="form-control" id="inputEmail4">
+            <input name="nombre" type="tel" class="form-control" id="inputEmail4">
           </div>
           <div class="mb-3">
             <label class="form-label mb-4">Apellido</label>
@@ -112,7 +116,7 @@
           </div>
 
           <div class="col-12 text-center mt-5">
-            <button type="button" class="btn btn-primary btn-form" onclick="obtenerDatos()">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-form">Sign in</button>
           </div>
 
         </fieldset>
