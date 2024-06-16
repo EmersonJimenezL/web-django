@@ -47,22 +47,26 @@
       <form class="form-box col-10 col-sm-10 col-md-8 col-lg-6 mx-auto border mb-5 mt-5 pt-5 pb-5 rounded-5">
         <fieldset class="text-center text-white w-50 mx-auto">
           <h3 class="mb-5">Inicio de sesión</h3>
+
           <div class="mb-3">
             <label class="form-label mb-4">Correo electrónico</label>
             <input type="text" id="email" class="form-control mb-2" placeholder="tucorreo@algo.com">
             <div id="mensaje-error-email" style="display: none; color: red; font-size: 15px;"></div>
           </div>
+
           <div class="mb-3">
             <label class="form-label mb-4">Contraseña</label>
             <input type="password" id="pass" class="form-control mb-2" placeholder="Contraseña">
             <div id="mensaje-error-password" style="display: none; color: red; font-size: 15px;"></div>
           </div>
+
           <div class="mb-4">
             <div class="form-check">
               <input class="mb-2" type="checkbox" id="remember-me">
               <label class="form-check-label" for="remember-me">Recordarme</label>
             </div>
           </div>
+
           <button type="button" class="btn btn-primary btn-form" onclick="obtenerDatos()">Enviar</button>
           <a href="/registro/" class="mt-2 mb-2 d-block text-white" style="text-decoration: none;">Regístrate</a>
         </fieldset>
@@ -125,10 +129,9 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="js/inicio-ses.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
+  <script src="{%static 'js/inicio-ses.js'%}"></script>
 </body>
 
 </html>
