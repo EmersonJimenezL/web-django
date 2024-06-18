@@ -1,0 +1,43 @@
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .cart-total {
+    color: white !important;
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  #cart-icon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  #cart-container {
+    color: white !important;
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 300px;
+    max-height: 400px;
+    background-image: linear-gradient(to bottom right, #403f44ca, #1e1b32d2);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .btn.btn-danger.btn-sm.remove-button {
+    background-image: linear-gradient(to bottom right, #fb2d2d, #ff6868);
+    color: white;
+  }
+
+  .btn.btn-danger.btn-sm.remove-button:hover {
+    border-color: #000000; /* Color del borde del botón al pasar el cursor */
+  }

@@ -1,7 +1,6 @@
-{% load static %}
-
+{%load static%}
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -10,7 +9,7 @@
     podras encontrar toda la informacion que buscas respecto a hospedaje en santiago 
     y/o ademas en regiones. Si deseeas pasar un dia agradable, 
     compartir con familia y/o amigos este hotel es para ti.">
-  <title> Home </title>
+  <title> Hoteles </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="{% static 'css/file_general.css' %}">
@@ -22,19 +21,21 @@
   <header>
     <nav class="nvr-box navbar bg-white navbar-expand-sm border-body" sdata-bs-theme="dark" style="padding: 0px;">
       <div class="container-fluid">
-        <a href="/"><img src="{% static 'images/V.png' %}" alt="V"
-            style="width: 80px; margin-right:15px; filter: drop-shadow(2px 2px 8px black);"></a>
+        <a href="/"><img src="{%static 'images/V.png'%}" alt="V" style="width: 80px; margin-right:15px; filter: drop-shadow(2px 2px 8px black);"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link nav-text" href="/hoteles/">Hoteles</a>
-            </li>
             <li class="nav-item ">
               <a class="nav-link nav-text" href="/inicioSesion/">Inicio de sesion</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link nav-text" href="/hotel_stgo/">Hotel Santiago</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link nav-text" href="/hotel_region/">Hotel Valparaiso</a>
             </li>
             <li class="nav-item ">
               <a class="nav-link nav-text" href="/contacto/">Contacto</a>
@@ -45,7 +46,6 @@
     </nav>
   </header>
 
-  <!-- Incluimos el carrusel en la parte superior de la página -->
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
@@ -90,93 +90,142 @@
 
   <div class="mt-1 p-2 container-fluid" style="background-color: rgba(0, 0, 0, 0.8); ">
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
-        <img src="{%static 'images/idx-hv-santiago.jpg'%}" alt="..." style="width:35em; height: 25em; 
-        border-radius: 0px 50px; " class="responsive mt-3">
+      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
+        <img src="{%static 'images/htl-stgo.jpg'%}" alt="..." style="width:85%; height: 25em; 
+        border-radius: 0px 50px; " class="responsive mt-1">
       </div>
 
-      <div class="col-sm-12 col-md-6 col-lg-6 adjuntar">
-        <a href="#" class="text-decoration-none text-dark">
-          <h2 class="mt-3 titulo_global" style="font-size: 35px;">Hotel Veranum Santiago</h2>
+      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar">
+        <a href="/hotel_stgo/" class="text-decoration-none text-dark">
+          <h2 class="mt-3" style="font-size: 35px;" id="titulo_global">Hotel Veranum Santiago</h2>
         </a>
         <p class="mt-2 p_card_global" style="font-size: 23px; text-align: justify; padding: 20px;">
-          El Hotel Veranum comenzó como un modesto hospedaje en el corazón de Santiago, Chile, ofreciendo una
-          experiencia personalizada y acogedora. Con el tiempo, su reputación creció gracias a su atención al detalle y
-          ambiente íntimo. Su arquitectura moderna, habitaciones con vistas panorámicas y gastronomía de alta calidad lo
-          convirtieron en un destino popular. Tras años de éxito en Santiago, expandió su presencia a Valparaíso,
-          consolidando su reputación como una marca de hospitalidad de lujo en Chile.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class=" mt-1 p-1 container-fluid mb-1" style="background-color: rgba(0, 0, 0, 0.8);">
-
-    <!-- Sección de actividades en Santiago y Valparaíso -->
-    <div class="row mt-0">
-      <div class="col-sm-12 col-md-6 col-lg-6 mt-3 adjuntar">
-        <h3 class="text-center mt-0 mb-3">Actividades en Santiago</h3>
-        <img src="{%static 'images/idx-mirador.jpg'%}" alt="Santiago" style="width:90%; height:auto; border-radius: 10px;"
-          class="img-fluid mb-3">
-        <p style="font-size: 18px; text-align: justify; padding: 10px;" class="bordes">
-          Descubre la vibrante capital de Chile con nuestras excursiones por Santiago. Visita el histórico Palacio de La
-          Moneda, explora el céntrico barrio de Lastarria, disfruta de las vistas panorámicas desde el Cerro San
-          Cristóbal y pasea por el Mercado Central para probar la cocina local. Nuestras actividades en Santiago ofrecen
-          una mezcla perfecta de cultura, historia y entretenimiento.
-        </p>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-6 mt-3 adjuntar">
-        <h3 class="text-center mt-0 mb-3">Actividades en Valparaíso</h3>
-        <img src="{%static 'images/idx-playa.jpg'%}" alt="Valparaíso" style="width:90%; height:auto; border-radius: 10px;"
-          class="img-fluid mb-3">
-        <p style="font-size: 18px; text-align: justify; padding: 10px;" class="bordes">
-          Explora la colorida ciudad de Valparaíso con nuestras actividades exclusivas. Recorre los famosos cerros
-          llenos de arte callejero, sube a los antiguos ascensores para disfrutar de vistas únicas y visita la casa de
-          Pablo Neruda, La Sebastiana. Además, ofrecemos tours por el puerto y paseos en bote para que experimentes la
-          vida marítima de esta fascinante ciudad.
+          El hotel se encuentra
+          ubicado en
+          el vibrante corazón de Santiago, Chile, rodeado de la majestuosa cordillera de los Andes y la dinámica vida
+          urbana de la ciudad. Con una arquitectura moderna y elegante, ofrece a sus huéspedes una experiencia de lujo
+          y comodidad. Desde sus amplias habitaciones con vistas panorámicas hasta sus exquisitos restaurantes que
+          ofrecen lo mejor de la gastronomía local e internacional, el hotel se destaca como un refugio de
+          sofisticación y estilo en medio de la bulliciosa capital chilena.
         </p>
       </div>
     </div>
-    <div class="container mt-0">
-      <h3 class="text-center text-white">Paquetes de Beneficios</h3>
+
+    <div class="container mt-0" style="border-top: 1px dashed white;">
+      <h3 class="text-center text-white mt-2">Habitaciones</h3>
       <div class="row mt-3">
-        <!-- Paquete 1: Tour Histórico por Santiago -->
+        <!-- Habitacion 1 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="{%static 'images/idx-tour-stgo.jpg'%}" class="card-img-top" alt="Tour Histórico por Santiago">
+            <img src="{%static 'images/htl-dormitorio1-stgo.jpg'%}" class="card-img-top" alt="Dormitorio Estándar">
             <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Tour Histórico por Santiago</h5>
-              <p class="card-text estilos_card_p">Explora los principales sitios históricos de Santiago, incluyendo el
-                Palacio de La Moneda, Plaza de Armas y el Museo Nacional de Bellas Artes. Este paquete incluye
-                transporte, guía profesional y entradas a los museos. Te esperamos para un hermoso tour</p>
-              <p class="card-text estilos_card_p"><strong>Precio por persona:</strong> $30.000 CLP</p>
+              <h5 class="card-title estilos_card_p">Dormitorio Estándar</h5>
+              <p class="card-text estilos_card_p">
+                Un dormitorio cómodo y funcional, perfecto para estancias cortas. Equipado con dos
+                camas matrimoniales, baño privado y comodidades básicas.</p>
+              <p class="card-text estilos_card_p">Precio: Desde $50.000 CLP por noche.</p>
             </div>
           </div>
         </div>
-        <!-- Paquete 2: Excursión al Valle de Casablanca desde Valparaíso -->
+        <!-- Habitacion 2 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
           <div class="card mb-4">
-            <img src="{%static 'images/idx-tour-valpo.jpg'%}" class="card-img-top" alt="Excursión al Valle de Casablanca">
+            <img src="{%static 'images/htl-dormitorio2-stgo.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
             <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Excursión al Valle de Casablanca desde Valparaíso</h5>
-              <p class="card-text estilos_card_p">Disfruta de una visita guiada a las famosas viñas del Valle de
-                Casablanca, con degustación de vinos incluidos. Este paquete incluye transporte desde Valparaíso, Te
-                esperamos para un hermoso tour.</p>
-              <p class="card-text estilos_card_p"><strong>Precio por persona:</strong> $60.000 CLP </p>
+              <h5 class="card-title estilos_card_p">Dormitorio Deluxe</h5>
+              <p class="card-text estilos_card_p">
+                Habitación amplia con vista a la ciudad. Cama king size, minibar, TV
+                pantalla plana,
+                baño de lujo con jacuzzi. Ideal para estancias cómodas y placenteras.
+              </p>
+              <p class="card-text estilos_card_p">Precio: Desde $120.000 CLP por noche.</p>
             </div>
           </div>
         </div>
-        <!-- Paquete 3: Caminata por los Cerros de Valparaíso -->
+        <!-- Habitacion 3 -->
         <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
-          <div class="card mb-0">
-            <img src="{%static 'images/idx-valpo-cerro.jpg'%}" class="card-img-top" alt="Caminata por los Cerros de Valparaíso">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-dormitorio3-stgo.avif'%}" class="card-img-top" alt="Suite Ejecutiva">
             <div class="card-body ajustar_car_paquetes">
-              <h5 class="card-title estilos_card_p">Caminata por los Cerros de Valparaíso</h5>
-              <p class="card-text estilos_card_p">Descubre los coloridos cerros de Valparaíso con un tour a pie que te
-                llevará por los puntos más emblemáticos de la ciudad, incluyendo murales de arte callejero y miradores
-                panorámicos. Te esperamos para un hermoso tour.</p>
-              <p class="card-text estilos_card_p"><strong>Precio por persona:</strong> $25.000 CLP </p>
+              <h5 class="card-title estilos_card_p">Suite Ejecutiva</h5>
+              <p class="card-text estilos_card_p">
+                Suite de lujo para negocios. Sala de estar, área de trabajo, cama king
+                size, baño con
+                ducha de hidromasaje, acceso a lounge exclusivo y entre otras caracteristicas mas.
+              </p>
+              <p class="card-text estilos_card_p">Precio: Desde $200.000 CLP por noche.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-1 p-2 container-fluid" style="background-color: rgba(0, 0, 0, 0.8); ">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar" style="border-right: 1px dashed white;">
+        <img src="{%static 'images/htl-region.jpeg'%}" alt="Hotel Veranum Valparaíso" style="width:85%; height: 25em; 
+        border-radius: 0px 50px; " class="responsive mt-1">
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-6 adjuntar">
+        <a href="/hotel_region/" class="text-decoration-none text-dark">
+          <h2 class="mt-3 titulo_global" style="font-size: 35px;">Hotel Veranum Valparaíso</h2>
+        </a>
+        <p class="mt-2 p_card_global" style="font-size: 23px; text-align: justify; padding: 20px;">
+          El hotel se encuentra ubicado en el pintoresco puerto de Valparaíso, Chile, conocido por sus coloridas casas
+          en las colinas y su vibrante escena cultural. Ofrece a sus huéspedes una experiencia única con vistas
+          espectaculares al océano Pacífico y a la encantadora arquitectura de la ciudad. Desde sus habitaciones con
+          vista al mar hasta sus acogedores espacios comunes, el hotel Veranum Valparaíso es un refugio de
+          tranquilidad y estilo.
+        </p>
+      </div>
+    </div>
+
+    <div class="container mt-0">
+      <h3 class="text-center text-white mt-2" style="border-top: 1px dashed white;">Habitaciones</h3>
+      <div class="row mt-3">
+        <!-- Habitacion 1 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-dormitorio1-reg.png'%}" class="card-img-top" alt="Dormitorio con Vista al Mar">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Dormitorio con Vista al Mar</h5>
+              <p class="card-text estilos_card_p">
+                Disfruta de una hermosa vista al océano Pacífico en este acogedor dormitorio.
+                Equipado con una cama matrimonial, baño privado y todas las comodidades necesarias.
+              </p>
+              <p class="card-text estilos_card_p">Precio: Desde $60.000 CLP por noche.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Habitacion 2 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-dormitorio2-reg.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Dormitorio con Vista a los Cerros</h5>
+              <p class="card-text estilos_card_p">
+                Este encantador dormitorio ofrece vistas a las coloridas colinas de Valparaíso.
+                Cuenta con dos camas individuales, baño privado y un ambiente relajante para disfrutar de la ciudad.
+              </p>
+              <p class="card-text estilos_card_p">Precio: Desde $70.000 CLP por noche.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Habitacion 3 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-dormitorio3-reg.jpg'%}" class="card-img-top" alt="Suite Ejecutiva">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Suite Familiar</h5>
+              <p class="card-text estilos_card_p">
+                Ideal para familias, esta espaciosa suite ofrece vistas al mar y a los cerros.
+                Equipado con una cama king size y una cama individual, baño privado y todas las comodidades modernas.
+              </p>
+              <p class="card-text estilos_card_p">Precio: Desde $90.000 CLP por noche.</p>
             </div>
           </div>
         </div>
@@ -184,11 +233,65 @@
     </div>
   </div>
 
+  <div class="mt-1 p-2 container-fluid" style="background-color: rgba(0, 0, 0, 0.8); ">
+    <div class="container mt-0">
+      <h3 class="text-center text-white mt-2">Espacios de descanso</h3>
+      <div class="row mt-3">
+        <!-- Habitacion 1 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-sala1.jpg'%}" class="card-img-top" alt="Dormitorio con Vista al Mar">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Bar rustico</h5>
+              <p class="card-text estilos_card_p">
+                Esta sala es el lugar perfecto para relajarse y disfrutar de una bebida
+                después de un largo día. Con una decoración rústica y acogedora, esta sala cuenta con cómodos sofás y
+                sillas de madera, una chimenea central y una barra bien surtida. Los clientes pueden socializar con
+                otros
+                huéspedes mientras disfrutan de una selección de cócteles artesanales y vinos de la región. El ambiente
+                cálido y acogedor invita a quedarse y compartir momentos inolvidables.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Habitacion 2 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-sala2.jpg'%}" class="card-img-top" alt="Dormitorio Deluxe">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Bar clasico</h5>
+              <p class="card-text estilos_card_p">
+                Esta sala ofrece un ambiente tranquilo y acogedor, ideal para relajarse
+                con un buen libro o simplemente desconectar del bullicio diario. Con estanterías llenas de libros,
+                cómodos
+                sillones y una iluminación suave, esta sala recrea el ambiente íntimo de una biblioteca personal. Los
+                clientes pueden disfrutar de un momento de paz y tranquilidad mientras se sumergen en la lectura o
+                simplemente disfrutan de la serenidad del entorno. ahjdlansfjkasnfkjasfnk
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Habitacion 3 -->
+        <div class="col-sm-12 col-md-12 col-lg-4 adjuntar">
+          <div class="card mb-4">
+            <img src="{%static 'images/htl-piscina.jpg'%}" class="card-img-top" alt="Suite Ejecutiva">
+            <div class="card-body ajustar_car_paquetes">
+              <h5 class="card-title estilos_card_p">Piscina</h5>
+              <p class="card-text estilos_card_p">
+                Nuestra piscina es el lugar perfecto para refrescarse y disfrutar del sol
+                durante los días cálidos. Con un diseño elegante y moderno, esta piscina ofrece un ambiente relajante
+                para
+                que todos los huéspedes puedan disfrutar. Ya sea nadando unas vueltas o simplemente descansando en una
+                tumbona junto a la piscina, este espacio recreativo ofrece diversión y relajación para toda la familia.
+                se proporcionan servicios de bar y snacks para que los clientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
-
-  <!--Incluimos el footer-->
   <footer>
     <div class="container-fluid bg-white mt-1 p-2">
       <div class="row">
@@ -198,7 +301,8 @@
               style="width: 75%; filter: drop-shadow(5px 5px 8px black);" id="logo"></a>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2">
-          <a href="#" class="text-decoration-none text-dark"><i class="bi bi-person-hearts"></i> Servicios Veranum</a>
+          <a href="#" class="text-decoration-none text-dark"><i class="bi bi-person-hearts"></i> Servicios
+            Veranum</a>
           <p class="text-dark p-1">Gimnasios<br>
             Piscina<br>Sala de reuniones<br>Buffets<br>Sala de spa y relajacion
           </p>
@@ -207,7 +311,7 @@
           <a href="#" class="text-decoration-none text-dark"><i class="bi bi-rocket-takeoff-fill"></i>Necesitas
             ayuda?</a>
           <p class="text-dark p-1">veranumhotel@gmail.com</p>
-          <a href="Contacto.html" class="text-dark text-decoration-none">Contactanos</a>
+          <a href="/contacto/" class="text-dark text-decoration-none">Contactanos</a>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2">
           <h6>Redes</h6>
@@ -238,11 +342,8 @@
         <p style="color: black;">&copy; 2024 Todos los derechos reservados</p>
         <p style="color: black;">Natanael Labrea / Christian Ormeño / Demis Cuesta / Emerson Jiménez</p>
       </div>
+    </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contacto.apps.ContactoConfig',
-    'hoteles.apps.HotelesConfig',
     'index.apps.IndexConfig',
     'inicioSesion.apps.IniciosesionConfig',
     'registro.apps.RegistroConfig',
+    'hotel_stgo.apps.HotelStgoConfig',
+    'hotel_region.apps.HotelRegionConfig',
 ]
 
 MIDDLEWARE = [
