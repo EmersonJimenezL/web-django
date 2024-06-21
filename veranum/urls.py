@@ -17,16 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from contacto.views import contactoView
-from hoteles.views import hotelesView
 from index.views import indexView
 from registro.views import registroView
 from inicioSesion.views import inicioSesionView
+from hotel_stgo.views import hotelStgoView
+from hotel_region.views import hotelRegionView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contacto/', contactoView),
-    path('hoteles/', hotelesView),
     path('', indexView),
     path('registro/', registroView),
     path('inicioSesion/', inicioSesionView),
+    path('hotel_stgo/', hotelStgoView),
+    path('hotel_region/', hotelRegionView),
 ]

@@ -14,7 +14,52 @@
     background-attachment: fixed;
     background-position: center calc(50% - 20px);
 }
+#cardimggym{
+    background-image: url(../images/gym.jpg);
+    background-size: cover;
+    background-attachment:absolute;
+    background-position: center calc(22% - 40px);
+    filter: grayscale(100%);
+    transition: filter 1ms linear;
+}
+#cardimggym:hover{
+    filter: grayscale(0%);
+    filter: contrast(150%) !important;
+}
 
+#cardimgspa{
+    background-image: url(../images/spa.jpg);
+    background-size: cover;
+    background-attachment: absolute;
+    filter: grayscale(100%);
+    transition: filter 1ms linear;
+}
+#cardimgspa:hover{
+    filter: grayscale(0%);
+    filter: contrast(150%) !important;
+}
+#cardimgtenis{
+    background-image: url(../images/cancha\ de\ tenis.jpg);
+    background-size: cover;
+    background-attachment: absolute;
+    filter: grayscale(100%);
+    transition: filter 1ms linear;
+}
+#cardimgtenis:hover{
+    filter: grayscale(0%);
+    filter: contrast(150%) !important;
+}
+#cardimgagua{
+    background-image: url(../images/agua-piscina.jpg);
+    background-size: cover;
+    background-attachment: absolute;
+    filter: grayscale(100%);
+    transition: filter 1ms linear;
+}
+#cardimgagua:hover{
+    filter: grayscale(0%);
+    filter: contrast(150%) !important;
+}
 :root {
     --bs-gutter-x: 0;
   }
@@ -33,7 +78,7 @@
 }
 
 .btn-form {
-    background-color: #580205;
+    background-image: linear-gradient(to bottom right, #38334dca, #1f1657d2);
     border: none;
 }
 
@@ -62,7 +107,6 @@ div>ul>li>a:hover {
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #420204;
 }
-
 .card-body {
     background-color: #99979785;
 }
@@ -79,13 +123,11 @@ p{
 .estilos_card_p{
 color: black !important;
 }
-
 .contenedorCarucel{
     font-weight: bold;
     color: #ffffff ;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336),2px 2px 1px rgba(0, 0, 0, 0.774), -1px -1px 1px rgba(0, 0, 0, 0.774);
 }
-
 .adjuntar{
 margin: 0px auto !important;
 text-align: center !important;
@@ -95,15 +137,10 @@ padding: 1%;
 .bordes{
     border-bottom: 1px dashed white;
 }
-
 .ajustar_car_paquetes{
     text-align:start !important;
 }
-
 a{
     font-family: 'fuenteparrafos' !important;
 }
 
-label{
-    font-family: 'fuenteparrafos' !important;
-}
