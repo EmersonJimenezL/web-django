@@ -49,6 +49,12 @@
           <h3 class="mb-5">Registro</h3>
 
           <div class="mb-3">
+            <label class="form-label mb-4">Rut</label>
+            <input name="rut" type="text" class="form-control" id="inputRut">
+            <div id="mensaje-error-rut" style="display: none; color: red; font-size: 15px;"></div>
+          </div>
+
+          <div class="mb-3">
             <label class="form-label mb-4">Nombre</label>
             <input name="nombre" type="text" class="form-control" id="inputNombre">
             <div id="mensaje-error-nombre" style="display: none; color: red; font-size: 15px;"></div>
@@ -56,25 +62,25 @@
 
           <div class="mb-3">
             <label class="form-label mb-4">Apellido</label>
-            <input type="text" class="form-control" id="inputApellido">
+            <input name="apellido" type="text" class="form-control" id="inputApellido">
             <span id="mensaje-error-apellido" style="display: none; color: red; font-size: 15px;"></span>
           </div>
 
           <div class="mb-3">
             <label class="form-label mb-4">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="tuemail@example.com">
+            <input name="email" type="email" class="form-control" id="inputEmail" placeholder="tuemail@example.com">
             <span id="mensaje-error-email" style="display: none; color: red; font-size: 15px;"></span>
           </div>
 
           <div class="mb-3">
             <label class="form-label mb-4">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
             <span id="mensaje-error-contrasenna" style="display: none; color: red; font-size: 15px;"></span>
           </div>
 
           <div class="mb-3">
             <label class="form-label mb-4">Dirección</label>
-            <input type="text" class="form-control" id="inputDireccion">
+            <input name="direccion" type="text" class="form-control" id="inputDireccion">
             <span id="mensaje-error-direccion" style="display: none; color: red; font-size: 15px;"></span>
           </div>
 
@@ -112,7 +118,7 @@
           </div>
 
           <div class="col-12 text-center mt-5">
-            <button type="submit" class="btn btn-primary btn-form" onclick="obtenerDatos()">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-form" onclick="validacionDatos()">Sign in</button>
           </div>
         </fieldset>
       </form>

@@ -1,6 +1,6 @@
 // RELIZAR VALIDACIONES NUEVAMENTE, REVISAR VARIABLES
 
-function obtenerDatos() {
+function validacionDatos() {
 
     // funcion funcion o evento, a traves del cual enviamos el formulario, una vez que las validaciones se encuentren ok. 
 
@@ -9,6 +9,7 @@ function obtenerDatos() {
 
         // creamos variabes constantes para obtener el valor que se encuentra dentro de los inputs
 
+        const rut = document.getElementById("inputRut").value;
         const nombre = document.getElementById("inputNombre").value;
         const apellido = document.getElementById("inputApellido").value;
         const email = document.getElementById("inputEmail").value;
@@ -25,6 +26,7 @@ function obtenerDatos() {
         const mensaje_error_contrasenna = document.getElementById('mensaje-error-contrasenna');
         const mensaje_error_direccion = document.getElementById('mensaje-error-direccion');
         const mensaje_error_region = document.getElementById('mensaje-error-region');
+        const mensaje_error_rut = document.getElementById('mensaje-error-rut');
 
         // modificamos el display de las etiqutas para que no se vean
 
@@ -34,9 +36,19 @@ function obtenerDatos() {
         mensaje_error_contrasenna.style.display = 'none';
         mensaje_error_direccion.style.display = 'none';
         mensaje_error_region.style.display = 'none';
+        mensaje_error_rut.style.display = 'none';
 
         // Validacion de los inputs 
         
+        if(rut.trim() == ''){
+            mensaje_error_rut.style.display = 'block'
+            mensaje_error_rut.style.textContent = 'El campo no puede estar vacio!!' 
+        }else if(rut.trim().length <= 11 ||rut.trim().length >= 12){
+            mensaje_error_rut.style.display = 'block'
+            mensaje_error_rut.style.textContent = 'formato: xx.xxx.xxx-x' 
+        }
+
+
         if(nombre.trim() == ''){
             mensaje_error_nombre.style.display = 'block'
             mensaje_error_nombre.textContent = 'El campo no puede estar vacio!!.'
