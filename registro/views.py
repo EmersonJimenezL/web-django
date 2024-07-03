@@ -7,7 +7,7 @@ from .models import Cliente
 def registroView(request):
     if (request.method == 'POST'):
         ## agregan elemento
-            obj = Cliente.objects.create(
+        obj = Cliente.objects.create(
             rutCliente = request.POST["rut"],
             nombre = request.POST["nombre"],
             apellido = request.POST["apellido"],
@@ -17,9 +17,9 @@ def registroView(request):
             comuna = request.POST["comuna"],
             contrasenna = request.POST["password"],
         );
-            obj.save();
-            context = {"mensaje": "Se a creado el cliente."}
-            return render(request, 'registro.html',context)
+        obj.save();
+        context = {"mensaje": "Se a creado el cliente."}
+        return render(request, 'registro.html',context)
     
     else:
         ## aca obtiene solamente el formulario
