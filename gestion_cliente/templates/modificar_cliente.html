@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/file_general.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Administracion</title>
+</head>
+
+<body class="generalbody">
+
+    <!--NAVBAR-->
+    <header>
+        <nav class="nvr-box navbar bg-white navbar-expand-sm border-body" sdata-bs-theme="dark" style="padding: 0px;">
+            <div class="container-fluid">
+                <a href="/"><img src="{%static 'images/V.png'%}" alt="V"
+                        style="width: 80px; margin-right:15px; filter: drop-shadow(2px 2px 8px black);"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link nav-text" href="/inicioSesion/">Inicio de sesion</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-text" href="/inicioSesionAdmin/">Administracion</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-text" href="/hotel_stgo/">Hotel Santiago</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-text" href="/hotel_region/">Hotel Valparaiso</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-text" href="/contacto/">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Creamos una tabla donde ver todos los Clientes -->
+
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Region</th>
+                <th scope="col">Comuna</th>
+              </tr>
+            </thead>
+    
+            {% for cliente in clientes %}
+            <tbody>
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{ cliente.rutCliente }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.region }}</td>
+                <td>{{ cliente.comuna }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+    </div>
+
+    <!--Incluimos el footer-->
+    <footer>
+        <div class="container-fluid bg-white mt-1 p-2">
+            <div class="row">
+                <!--Aquí va el logo del hotel-->
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <a href="#" class="text-decoration-none text-success"><img src="{% static 'images/V.png' %}"
+                            class="rounded-2" style="width: 75%; filter: drop-shadow(5px 5px 8px black);" id="logo"></a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <a href="#" class="text-decoration-none text-dark"><i class="bi bi-person-hearts"></i> Servicios
+                        Veranum</a>
+                    <p class="text-dark p-1">Gimnasios<br>
+                        Piscina<br>Sala de reuniones<br>Buffets<br>Sala de spa y relajacion
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <a href="#" class="text-decoration-none text-dark"><i
+                            class="bi bi-rocket-takeoff-fill"></i>Necesitas
+                        ayuda?</a>
+                    <p class="text-dark p-1">veranumhotel@gmail.com</p>
+                    <a href="#" class="text-dark text-decoration-none">Contactanos</a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <h6>Redes</h6>
+                    <a href="https://www.facebook.com/?locale=es_LA" class="text-decoration-none"><i
+                            class="bi bi-facebook"></i>Facebook</a>
+                    <br>
+                    <a href="https://www.instagram.com/" class="text-decoration-none"
+                        style="color: rgba(128, 0, 255);"><i class="bi bi-instagram"></i>Instagram</a>
+                    <br>
+                    <a href="https://www.whatsapp.com/?lang=es_LA" class="text-decoration-none"
+                        style="color:rgba(0, 152, 70);">
+                        <i class="bi bi-whatsapp"></i>WhatsApp</a>
+                    <br>
+                    <a href="https://www.threads.net/?hl=es-la" class="text-decoration-none text-dark">
+                        <i class="bi bi-threads-fill"></i>Threads</a>
+                    <br>
+                    <a href="https://twitter.com/?lang=es" class="text-decoration-none text-dark"><i
+                            class="bi bi-twitter-x"></i>Twitter</a>
+                </div>
+                <!--Aquí va el maps-->
+                <div class="col-sm-6 col-md-4 col-lg-2">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.1919501913984!2d-122.4075185855756!3d37.78374906348677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580886b341cb1%3A0x3843b8b296c92047!2sGoogleplex!5e0!3m2!1sen!2sus!4v1621916913439!5m2!1sen!2sus"
+                        width="200%" height="160" style="border:0;;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="container text-center">
+                <hr>
+                <p style="color: black;">&copy; 2024 Todos los derechos reservados</p>
+                <p style="color: black;">Natanael Labrea / Christian Ormeño / Demis Cuesta / Emerson Jiménez</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="{%static 'js/inicio-ses.js'%}"></script>
+</body>
+
+</html>

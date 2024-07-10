@@ -22,6 +22,8 @@ from registro.views import registroView
 from inicioSesion.views import inicioSesionView
 from hotel_stgo.views import hotelStgoView
 from hotel_region.views import hotelRegionView
+from inicioSesionAdmin.views import inicioSesionAdminView
+from gestion_cliente.views import gestion_clienteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +33,6 @@ urlpatterns = [
     path('inicioSesion/', inicioSesionView),
     path('hotel_stgo/', hotelStgoView),
     path('hotel_region/', hotelRegionView),
+    path('inicioSesionAdmin/', inicioSesionAdminView),
+    path('gestion_cliente/', gestion_clienteView),
 ]

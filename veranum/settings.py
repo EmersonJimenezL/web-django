@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'registro.apps.RegistroConfig',
     'hotel_stgo.apps.HotelStgoConfig',
     'hotel_region.apps.HotelRegionConfig',
+    'inicioSesionAdmin.apps.IniciosesionadminConfig',
+    'gestion_cliente.apps.GestionClienteConfig',
 ]
 
 MIDDLEWARE = [
