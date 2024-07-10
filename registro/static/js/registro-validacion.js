@@ -41,67 +41,67 @@ function validacionDatos() {
         // Validacion de los inputs 
         
         if(rut.trim() == ''){
-            mensaje_error_rut.style.display = 'block'
-            mensaje_error_rut.style.textContent = 'El campo no puede estar vacio!!' 
-        }else if(rut.trim().length <= 11 ||rut.trim().length >= 12){
-            mensaje_error_rut.style.display = 'block'
-            mensaje_error_rut.style.textContent = 'formato: xx.xxx.xxx-x' 
+            mensaje_error_rut.style.display = 'block';
+            mensaje_error_rut.style.textContent = 'El campo no puede estar vacio!!' ;
+        }else if(rut.trim().length <= 11 || rut.trim().length >= 12){
+            mensaje_error_rut.style.display = 'block';
+            mensaje_error_rut.style.textContent = 'formato: xx.xxx.xxx-x' ;
         }
 
 
         if(nombre.trim() == ''){
-            mensaje_error_nombre.style.display = 'block'
-            mensaje_error_nombre.textContent = 'El campo no puede estar vacio!!.'
+            mensaje_error_nombre.style.display = 'block';
+            mensaje_error_nombre.textContent = 'El campo no puede estar vacio!!.';
         }else if (nombre.trim().length < 3 || nombre.trim().length > 15) {
-            mensaje_error_nombre.style.display = 'block'
-            mensaje_error_nombre.textContent = 'Error de validacion.'
+            mensaje_error_nombre.style.display = 'block';
+            mensaje_error_nombre.textContent = 'Error de validacion.';
         }
 
         if (apellido.trim()=='') {
-            mensaje_error_apellido.style.display = 'block'
-            mensaje_error_apellido.textContent = 'El campo no puede estar vacio!!.'
+            mensaje_error_apellido.style.display = 'block';
+            mensaje_error_apellido.textContent = 'El campo no puede estar vacio!!.';
         }
         else if (apellido.trim().length < 3 || apellido.trim().length > 15) {
             mensaje_error_apellido.style.display = 'block'
-            mensaje_error_apellido.textContent = 'Error de validacion.'
+            mensaje_error_apellido.textContent = 'Error de validacion.';
         }
 
         if (email.trim() == '') {
-            mensaje_error_email.style.display = 'block'
-            mensaje_error_email.textContent = 'El campo no puede estar vacio!!.'
+            mensaje_error_email.style.display = 'block';
+            mensaje_error_email.textContent = 'El campo no puede estar vacio!!.';
         }
         else if (email.trim().length < 3 || email.trim().length > 20) {
-            mensaje_error_email.style.display = 'block'
-            mensaje_error_email.textContent = 'Error de validacion.'
+            mensaje_error_email.style.display = 'block';
+            mensaje_error_email.textContent = 'Error de validacion.';
         }
         
         if (password.trim() == '') {
-            mensaje_error_contrasenna.style.display = 'block'
-            mensaje_error_contrasenna.textContent = 'El campo no puede estar vacio!!.'
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'El campo no puede estar vacio!!.';
         }
         else if (password.trim().length < 5 || password.trim().length > 15) {
-            mensaje_error_contrasenna.style.display = 'block'
-            mensaje_error_contrasenna.textContent = 'La contraseña debe tener entre 5 y 15 caracteres.'
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'La contraseña debe tener entre ;5 y 15 caracteres.';
         }
         else if (!isNaN(password)) {
-            mensaje_error_contrasenna.style.display = 'block'
-            mensaje_error_contrasenna.textContent = 'Tu contraseña no solo debe contener numeros, tambien debe contener letras.'
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'Tu contraseña no solo debe contener numeros, tambien debe contener letras.';
         }
 
         if (direccion.trim() == '') {
-                mensaje_error_direccion.style.display = 'block'
-                mensaje_error_direccion.textContent = 'El campo no puede estar vacio!!.'
+                mensaje_error_direccion.style.display = 'block';
+                mensaje_error_direccion.textContent = 'El campo no puede estar vacio!!.';
         } else if (direccion.trim().length < 4 || direccion.trim().length > 20) {
-            mensaje_error_direccion.style.display = 'block'
-            mensaje_error_direccion.textContent = 'Error de validacion'
+            mensaje_error_direccion.style.display = 'block';
+            mensaje_error_direccion.textContent = 'Error de validacion';
         } else if (!isNaN(direccion)) {
-            mensaje_error_direccion.style.display = 'block'
-            mensaje_error_direccion.textContent = 'Error de validacion'
+            mensaje_error_direccion.style.display = 'block';
+            mensaje_error_direccion.textContent = 'Error de validacion';
         }
 
         if(region == '' || comuna == ''){
-            mensaje_error_region.style.display = 'block'
-            mensaje_error_region.textContent = 'Error de validacion'
+            mensaje_error_region.style.display = 'block';
+            mensaje_error_region.textContent = 'Error de validacion';
         }
 
 
