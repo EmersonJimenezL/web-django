@@ -1,14 +1,9 @@
-// RELIZAR VALIDACIONES NUEVAMENTE, REVISAR VARIABLES
-
 function validacionDatos() {
-
-    // funcion funcion o evento, a traves del cual enviamos el formulario, una vez que las validaciones se encuentren ok. 
-
+    // Agrega el evento 'submit' al formulario
     document.getElementById('registro-form').addEventListener('submit', function(event) {
         event.preventDefault(); 
 
-        // creamos variabes constantes para obtener el valor que se encuentra dentro de los inputs
-
+        // Obtiene los valores de los inputs
         const rut = document.getElementById("inputRut").value;
         const nombre = document.getElementById("inputNombre").value;
         const apellido = document.getElementById("inputApellido").value;
@@ -18,8 +13,7 @@ function validacionDatos() {
         const region = document.getElementById("region").value;
         const comuna = document.getElementById("comuna").value;
 
-        // obtenemos los campos en los cuales se encuentran las etiquetas para lo mensajes
-
+        // Obtiene los elementos para mostrar los mensajes de error
         const mensaje_error_nombre = document.getElementById('mensaje-error-nombre');
         const mensaje_error_apellido = document.getElementById('mensaje-error-apellido');
         const mensaje_error_email = document.getElementById('mensaje-error-email');
@@ -28,8 +22,7 @@ function validacionDatos() {
         const mensaje_error_region = document.getElementById('mensaje-error-region');
         const mensaje_error_rut = document.getElementById('mensaje-error-rut');
 
-        // modificamos el display de las etiqutas para que no se vean
-
+        // Oculta los mensajes de error al inicio
         mensaje_error_nombre.style.display = 'none';
         mensaje_error_apellido.style.display = 'none';
         mensaje_error_email.style.display = 'none';
@@ -38,83 +31,95 @@ function validacionDatos() {
         mensaje_error_region.style.display = 'none';
         mensaje_error_rut.style.display = 'none';
 
-        // Validacion de los inputs 
-        
-        if(rut.trim() == ''){
+        let isValid = true; // Bandera para verificar si el formulario es válido
+
+        // Validación del RUT
+        if (rut.trim() === '') {
             mensaje_error_rut.style.display = 'block';
-            mensaje_error_rut.style.textContent = 'El campo no puede estar vacio!!' ;
-        }else if(rut.trim().length <= 11 || rut.trim().length >= 12){
+            mensaje_error_rut.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
+        } else if (rut.trim().length < 11 || rut.trim().length > 12) {
             mensaje_error_rut.style.display = 'block';
-            mensaje_error_rut.style.textContent = 'formato: xx.xxx.xxx-x' ;
+            mensaje_error_rut.textContent = 'Formato: xx.xxx.xxx-x';
+            isValid = false;
         }
 
-
-        if(nombre.trim() == ''){
+        // Validación del nombre
+        if (nombre.trim() === '') {
             mensaje_error_nombre.style.display = 'block';
-            mensaje_error_nombre.textContent = 'El campo no puede estar vacio!!.';
-        }else if (nombre.trim().length < 3 || nombre.trim().length > 15) {
+            mensaje_error_nombre.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
+        } else if (nombre.trim().length < 3 || nombre.trim().length > 15) {
             mensaje_error_nombre.style.display = 'block';
-            mensaje_error_nombre.textContent = 'Error de validacion.';
+            mensaje_error_nombre.textContent = 'Error de validación.';
+            isValid = false;
         }
 
-        if (apellido.trim()=='') {
+        // Validación del apellido
+        if (apellido.trim() === '') {
             mensaje_error_apellido.style.display = 'block';
-            mensaje_error_apellido.textContent = 'El campo no puede estar vacio!!.';
-        }
-        else if (apellido.trim().length < 3 || apellido.trim().length > 15) {
-            mensaje_error_apellido.style.display = 'block'
-            mensaje_error_apellido.textContent = 'Error de validacion.';
-        }
-
-        if (email.trim() == '') {
-            mensaje_error_email.style.display = 'block';
-            mensaje_error_email.textContent = 'El campo no puede estar vacio!!.';
-        }
-        else if (email.trim().length < 3 || email.trim().length > 20) {
-            mensaje_error_email.style.display = 'block';
-            mensaje_error_email.textContent = 'Error de validacion.';
-        }
-        
-        if (password.trim() == '') {
-            mensaje_error_contrasenna.style.display = 'block';
-            mensaje_error_contrasenna.textContent = 'El campo no puede estar vacio!!.';
-        }
-        else if (password.trim().length < 5 || password.trim().length > 15) {
-            mensaje_error_contrasenna.style.display = 'block';
-            mensaje_error_contrasenna.textContent = 'La contraseña debe tener entre ;5 y 15 caracteres.';
-        }
-        else if (!isNaN(password)) {
-            mensaje_error_contrasenna.style.display = 'block';
-            mensaje_error_contrasenna.textContent = 'Tu contraseña no solo debe contener numeros, tambien debe contener letras.';
+            mensaje_error_apellido.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
+        } else if (apellido.trim().length < 3 || apellido.trim().length > 15) {
+            mensaje_error_apellido.style.display = 'block';
+            mensaje_error_apellido.textContent = 'Error de validación.';
+            isValid = false;
         }
 
-        if (direccion.trim() == '') {
-                mensaje_error_direccion.style.display = 'block';
-                mensaje_error_direccion.textContent = 'El campo no puede estar vacio!!.';
+        // Validación del email
+        if (email.trim() === '') {
+            mensaje_error_email.style.display = 'block';
+            mensaje_error_email.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
+        } else if (email.trim().length < 15 || email.trim().length > 254) {
+            mensaje_error_email.style.display = 'block';
+            mensaje_error_email.textContent = 'El correo debe tener entre 15 y 254 caracteres.';
+            isValid = false;
+        }
+
+        // Validación de la contraseña
+        if (password.trim() === '') {
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
+        } else if (password.trim().length < 5 || password.trim().length > 15) {
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'La contraseña debe tener entre 5 y 15 caracteres.';
+            isValid = false;
+        } else if (!/\d/.test(password) || !/[a-zA-Z]/.test(password)) {
+            mensaje_error_contrasenna.style.display = 'block';
+            mensaje_error_contrasenna.textContent = 'Tu contraseña debe contener tanto números como letras.';
+            isValid = false;
+        }
+
+        // Validación de la dirección
+        if (direccion.trim() === '') {
+            mensaje_error_direccion.style.display = 'block';
+            mensaje_error_direccion.textContent = 'El campo no puede estar vacío!!.';
+            isValid = false;
         } else if (direccion.trim().length < 4 || direccion.trim().length > 20) {
             mensaje_error_direccion.style.display = 'block';
-            mensaje_error_direccion.textContent = 'Error de validacion';
+            mensaje_error_direccion.textContent = 'Error de validación';
+            isValid = false;
         } else if (!isNaN(direccion)) {
             mensaje_error_direccion.style.display = 'block';
-            mensaje_error_direccion.textContent = 'Error de validacion';
+            mensaje_error_direccion.textContent = 'Error de validación';
+            isValid = false;
         }
 
-        if(region == '' || comuna == ''){
+        // Validación de la región y comuna
+        if (region === '' || comuna === '') {
             mensaje_error_region.style.display = 'block';
-            mensaje_error_region.textContent = 'Error de validacion';
+            mensaje_error_region.textContent = 'Error de validación';
+            isValid = false;
         }
 
-
-        // validacion de que todos los datos del formulario se encuentren ok
-
-        if (mensaje_error_nombre.style.display === 'none' &&
-            mensaje_error_apellido.style.display === 'none' &&
-            mensaje_error_email.style.display === 'none' &&
-            mensaje_error_contrasenna.style.display === 'none' &&
-            mensaje_error_direccion.style.display === 'none' && 
-            mensaje_error_region.style.display === 'none') {
-            this.submit(); // Envía el formulario
+        // Si todas las validaciones pasan, se envía el formulario
+        if (isValid) {
+            this.submit();
         }
-
     });
 }
+
+// Llama a la función de validación al cargar la página
+window.onload = validacionDatos;

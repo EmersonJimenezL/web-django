@@ -52,32 +52,44 @@
     <div class="container mt-5">
         <table class="table">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Direccion</th>
-                <th scope="col">Region</th>
-                <th scope="col">Comuna</th>
-              </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Comuna</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Modificar</th>
+                </tr>
             </thead>
-    
-            {% for cliente in clientes %}
             <tbody>
-              <tr>
-                <th scope="row">{{forloop.counter}}</th>
-                <td>{{ cliente.rutCliente }}</td>
-                <td>{{ cliente.nombre }}</td>
-                <td>{{ cliente.apellido }}</td>
-                <td>{{ cliente.direccion }}</td>
-                <td>{{ cliente.region }}</td>
-                <td>{{ cliente.comuna }}</td>
-              </tr>
+                {% for cliente in clientes %}
+                {% if cliente.rutCliente %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ cliente.rutCliente }}</td>
+                    <td>{{ cliente.nombre }}</td>
+                    <td>{{ cliente.apellido }}</td>
+                    <td>{{ cliente.direccion }}</td>
+                    <td>{{ cliente.region }}</td>
+                    <td>{{ cliente.comuna }}</td>
+                    <td>
+                        <form action="{% url 'del_cliente' pk=cliente.rutCliente %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                    <td><button class="btn btn-primary">Modificar</button></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
             </tbody>
-            {% endfor %}
-          </table>
+        </table>
     </div>
+    
+    
 
     <!--Incluimos el footer-->
     <footer>
