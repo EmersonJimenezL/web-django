@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Cliente</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Uso exclusivo de la Administración</h1>
+        {% if cliente %}
+            <h2>Formulario de modificación</h2>
+            <form action="{% url 'update_cliente' cliente.rutCliente %}" method="POST">  <!-- Aquí -->
+                {% csrf_token %}
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="{{ cliente.nombre }}">
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" value="{{ cliente.apellido }}">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{ cliente.email }}">
+                </div>
+                <div>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" value="{{ cliente.direccion }}">
+                </div>
+                <div>
+                    <label for="region">Región:</label>
+                    <input type="text" id="region" name="region" value="{{ cliente.region }}">
+                </div>
+                <div>
+                    <label for="comuna">Comuna:</label>
+                    <input type="text" id="comuna" name="comuna" value="{{ cliente.comuna }}">
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" value="{{ cliente.contrasenna }}">
+                </div>
+                <input type="submit" value="Actualizar">
+            </form>
+        {% else %}
+            <p>No se encontró el cliente.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

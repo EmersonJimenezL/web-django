@@ -7,7 +7,7 @@ from inicioSesion.views import inicioSesionView
 from hotel_stgo.views import hotelStgoView
 from hotel_region.views import hotelRegionView
 from inicioSesionAdmin.views import inicioSesionAdminView
-from gestion_cliente.views import gestion_clienteView, del_cliente
+from gestion_cliente.views import gestion_clienteView, del_cliente,clientes_findEdit,update_cliente
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,4 +20,6 @@ urlpatterns = [
     path('inicioSesionAdmin/', inicioSesionAdminView),
     path('gestion_cliente/', gestion_clienteView),
     path('del_cliente/<str:pk>', del_cliente, name='del_cliente'),
+    path('clientes_findEdit/<str:pk>', clientes_findEdit, name='clientes_findEdit'),
+    path('update_cliente/<str:pk>', update_cliente, name='update_cliente'),
 ]
